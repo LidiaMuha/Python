@@ -12,21 +12,21 @@ try:
     # input1 = browser.find_element(By.TAG_NAME, "input")
     # input1.send_keys(y)
 
-    field1 = browser.find_element(By.XPATH, "/html/body/div[1]/form/div/input[1]")
+    field1 = browser.find_element(By.NAME, "firstname")
     field1.send_keys("Лидия")
 
-    field2 = browser.find_element(By.XPATH, "/html/body/div[1]/form/div/input[2]")
+    field2 = browser.find_element(By.NAME, "lastname")
     field2.send_keys("Павловна")
 
-    field3 = browser.find_element(By.XPATH, "/html/body/div[1]/form/div/input[3]")
+    field3 = browser.find_element(By.NAME, "email")
     field3.send_keys("lida@mail.ru")
 
-    my_file = os.path.abspath((os.path.dirname(__file__)))  # получаем путь к директории исп-ого файла
-    put_file = os.path.abspath(my_file, 'my_file.txt')  # добавляем к этому пути имя файла
+    my_file = os.path.abspath((os.path.dirname('')))  # получаем путь к директории исп-ого файла
+    put_file = os.path.join(my_file, 'my_file.txt')  # добавляем к этому пути имя файла
     element = browser.find_element(By.ID, "file")
     element.send_keys(put_file)
 
-    button = browser.find_element(By.XPATH, "/html/body/div[1]/form/button/font/fontn")
+    button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
 
 finally:
